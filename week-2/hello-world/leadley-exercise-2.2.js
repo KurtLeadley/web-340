@@ -7,7 +7,7 @@
 ***************************************************************/
 // require and display my header
 const header = require('../../leadley-header.js');
-var outputHeader = header.display("Kurt","Leadley","leadley-exercise-1.3.js");
+var outputHeader = header.display("Kurt","Leadley","leadley-exercise-2.2.js");
 console.log(outputHeader);
 console.log('');
 
