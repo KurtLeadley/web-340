@@ -1,0 +1,36 @@
+<head>
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <nav class="navbar">
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="#">Home </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">About Us </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us </a>
+        </li>
+      </ul>
+  </nav>
+  <h2>EJS If test example with an array</h2>
+  <div role="main" class="container">
+    <div id='grid-1'>
+      <div class="item-1">
+          <%
+            //get the array length, if the array has something, loop through it and print each name
+            var arrayLength = names.length;
+              if (arrayLength > 1) {
+                for (var i =0; i < arrayLength; i++) { %>
+                  <p><%= names[i] %></p> <%
+                }
+              }
+           %>
+      </div>
+      <div class="item-2">
+      </div>
+    </div>
+  </div>
