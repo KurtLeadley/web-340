@@ -1,10 +1,12 @@
 /*
-#d9eeec
 #fff
-#000
-#64b2cd
+#ebf0f5
+#d9eeec
+#9db7d1
+#8aa9c8
 #3c70a4
 #da9833
+#000
 */
 body {
   background-color: #d9eeec;
@@ -16,10 +18,13 @@ body {
 }
 nav {
   background-color: #3c70a4;
-  color:#d9eeec;
 }
-p,ul,h1,h2,h3,a {
-  padding:0 15px;
+h1 {
+  width:100%;
+  border-bottom: 1px solid #da9833;
+  color:#3c70a4;
+  font-weight: bolder;
+  padding:10px 0;
 }
 a {
   color:#fff;
@@ -30,6 +35,15 @@ a:hover {
 .blue {
   color:#3c70a4;
 }
+#submit {
+  background-color: #3c70a4;
+  color:#fff;
+  border:#8aa9c8;
+  border-radius: 4px;
+}
+#submit:hover {
+  color:#da9833;
+}
 #container {
   margin:30px 10%;
 }
@@ -38,12 +52,17 @@ footer {
   color:#fff;
   padding:30px 0;
 }
+footer p {
+  padding:0 20px;
+}
 table {
   width:100%;
 }
 table td, table th {
   text-align: center;
-  padding:5px 0;
+  padding:10px 0;
+  border-top: 4px solid #d9eeec;
+  border-right: 2px solid #d9eeec;
 }
 table th {
   background-color: #3c70a4;
@@ -56,13 +75,16 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
   background-color: #8aa9c8;
 }
+.alert-warning {
+  background-color: #ebf0f5;
+  border-color: #8aa9c8;
+}
 /* GRIDS */
 #index-grid {
   display:grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 15px;
   row-gap:30px;
-  border-bottom: 1px solid #da9833;
   grid-template-areas:
   "header header"
   "p1 p2";
