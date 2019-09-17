@@ -1,0 +1,80 @@
+/*
+#d9eeec
+#fff
+#000
+#64b2cd
+#3c70a4
+#da9833
+*/
+body {
+  background-color: #d9eeec;
+  color: #000;
+  font-size: 1.2em;
+  font-family: 'Varela Round', sans-serif;
+  margin:0;
+  padding:0;
+}
+nav {
+  background-color: #3c70a4;
+  color:#d9eeec;
+}
+p,ul,h1,h2,h3,a {
+  padding:0 15px;
+}
+a {
+  color:#fff;
+}
+a:hover {
+  color:#da9833;
+}
+.blue {
+  color:#3c70a4;
+}
+#container {
+  margin:30px 10%;
+}
+footer {
+  background-color: #3c70a4;
+  color:#fff;
+  padding:30px 0;
+}
+table {
+  width:100%;
+}
+table td, table th {
+  text-align: center;
+  padding:5px 0;
+}
+table th {
+  background-color: #3c70a4;
+  color: #fff;
+}
+table tr:nth-child(even) {
+  background-color: #9db7d1;
+  ;
+}
+table tr:nth-child(odd) {
+  background-color: #8aa9c8;
+}
+/* GRIDS */
+#index-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+  row-gap:30px;
+  border-bottom: 1px solid #da9833;
+  grid-template-areas:
+  "header header"
+  "p1 p2";
+}
+#index-grid h1 {
+  grid-area:header;
+  justify-self: center;
+}
+#index-grid p:nth-of-type(1) {
+  grid-area: p1;
+  border-right: 1px solid #da9833;
+}
+#index-grid p:nth-of-type(2) {
+  grid-area:p2;
+}
