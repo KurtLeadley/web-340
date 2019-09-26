@@ -2,48 +2,21 @@
 <% include navbar %>
 <div id="container">
   <h1>Employee Records List</h1>
-  <p class='blue'><i>Below is a listing of our current employees</i></p>
+  <% console.log(typeof employees); %>
+  <% employees.forEach(function(entry) {
+    console.log(entry.firstName+" "+entry.lastName);
+  }); %>
   <table>
     <tr>
-      <th>ID</th>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
-      <th>Job Title</th>
-      <th>Salary</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td><%= employee.firstName %></td>
-      <td><%= employee.lastName %></td>
-      <td>bstevens19@thiscompany.com</td>
-      <td>Project Manager</td>
-      <td>$80,000</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Kelly</td>
-      <td>Perkins</td>
-      <td>kperkins@thiscompany.com</td>
-      <td>Graphic Designer</td>
-      <td>$55,000</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Bob</td>
-      <td>Stevens</td>
-      <td>bstevens19@thiscompany.com</td>
-      <td>Project Manager</td>
-      <td>$80,000</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>Bobby</td>
-      <td>Stevens</td>
-      <td>bstevens19@thiscompany.com</td>
-      <td>Project Manager</td>
-      <td>$80,000</td>
-    </tr>
+    <% employees.forEach(function(entry) { %>
+        <tr>
+          <td><%=entry.firstName%></td>
+          <td><%=entry.lastName%></td>
+        </tr>
+    <% }); %>
   </table>
 </div>
 <% include scripts %>

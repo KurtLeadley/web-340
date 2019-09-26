@@ -35,6 +35,10 @@ a:hover {
 .blue {
   color:#3c70a4;
 }
+.flag {
+  color:#da9833;
+  background-color: #000;
+}
 #submit {
   background-color: #3c70a4;
   color:#fff;
