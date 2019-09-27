@@ -2,7 +2,8 @@
 ; Title:  leadley-assignment-ems
 ; Author: Professor Krasso, Kurt Leadley
 ; Date:   25 September 2019
-; Description: ems application node.js handler
+; Description: ems application node.js, routes, libraries
+; use, set, db handler
 ***************************************************************/
 // require and display my header
 const header = require('../leadley-header.js');
@@ -88,12 +89,15 @@ app.get("/", function (request, response) {
 });
 // load the list.ejs file when navigating to it
 app.get("/list.ejs", function(request, response) {
-  var employees = db.collection('employees').find();
-  console.log(employees);
-  console.log("pass this to list.ejs: " + employees);
-  response.render("list", {
-      title: "EMS | Listing",
-      employees: employees
+  // make sure whatever in whatever.find is the name of the model
+  Employee.find({}, function(error, employees) {
+    if (error) throw error;
+    // after you find the Employee model in your mongoose db, send it over
+    // to list.ejs as employee.
+    response.render("list.ejs", {
+        title: "Employee List",
+        employees: employees
+    });
   });
 });
 // load the new.ejs file when navigating to it
@@ -133,7 +137,7 @@ app.post("/process", function(request, response) {
     console.log(employee + " saved successfully");
   });
   // if it all works, send the browser to our employee list
-  response.redirect("/");
+  response.redirect("/list.ejs");
 });
 /////////////////////////////////////////////////////////////////////
 /////////////////// Create our Server  //////////////////////////////
