@@ -100,17 +100,25 @@ app.get("/list.ejs", function(request, response) {
     });
   });
 });
+// load the list.ejs file when navigating to it, but add the query argument from the selected name in list.ejs
+app.get("/view.ejs/:queryName", function(request, response) {
+  const queryName = request.params['queryName'];
+  // look for the lastName of the name you clicked on in our mongo db
+  Employee.find({'lastName': queryName}, function(error, employees) {
+    if (error) throw error;
+    // after you find the Employee in your mongoose db, send it over
+    // to view.ejs
+    response.render("view.ejs", {
+        title: "Employee View",
+        employees: employees
+    });
+  });
+});
 // load the new.ejs file when navigating to it
 app.get("/new.ejs", function (request, response) {
   response.render("new", {
       title: "EMS | Entry",
       message: "New Employee Entry Page"
-  });
-});
-// load the view.ejs file when navigating to it
-app.get("/view.ejs", function (request, response) {
-  response.render("view", {
-      title: "EMS | View"
   });
 });
 //////////////////////////////////////////////////////////////////

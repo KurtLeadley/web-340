@@ -1,7 +1,35 @@
+<!---
+; Title:  leadley-assignment-ems
+; Author: Professor Krasso, Kurt Leadley
+; Date:  7 October 2019
+; Description: ems view single employee
+-->
 <% include header %>
 <% include navbar %>
 <div id="container">
-  <h1>Selected Employee Information</h1>
+  <h2>-- Employee Record --</h2>
+  <!-- read only form that displays first and last name 
+    based on a get request from app.js and list.ejs link selection -->
+  <div class="form-group">
+      <label for="txtName"> First Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="txtName"
+        readonly
+        value="<%= employees[0].firstName %>"
+        name="txtName"
+      />
+    <label for="txtName">Last Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="txtName"
+      readonly
+      value="<%= employees[0].lastName %>"
+      name="txtName"
+    />
+  </div>
 </div>
 <% include scripts %>
 <% include footer %>
