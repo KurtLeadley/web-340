@@ -5,10 +5,10 @@
 ; Description: ems employee data model
 ***************************************************************/
 // require and display my header
-const header = require('../../leadley-header.js');
-var outputHeader = header.display("Kurt","Leadley","employees.js");
-console.log(outputHeader);
-console.log('');
+// const header = require('../../leadley-header.js');
+// var outputHeader = header.display("Kurt","Leadley","employees.js");
+// console.log(outputHeader);
+// console.log('');
 // require mongoose db
 var mongoose = require("mongoose");
 // use the mongo Schema method to create a Schema

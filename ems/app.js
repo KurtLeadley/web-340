@@ -1,15 +1,15 @@
 /***********************************
 ; Title:  leadley-assignment-ems
 ; Author: Professor Krasso, Kurt Leadley
-; Date:   25 September 2019
+; Date:   7 October 2019
 ; Description: ems application node.js, routes, libraries
 ; use, set, db handler
 ***************************************************************/
 // require and display my header
-const header = require('../leadley-header.js');
-var outputHeader = header.display("Kurt","Leadley","app.js");
-console.log(outputHeader);
-console.log('');
+//const header = require('../leadley-header.js');
+// var outputHeader = header.display("Kurt","Leadley","app.js");
+// console.log(outputHeader);
+// console.log('');
 /////////////////////////////////////////////////////////////
 ////////////// External Dependencies ////////////////////////
 /////////////////////////////////////////////////////////////
@@ -151,6 +151,7 @@ app.post("/process", function(request, response) {
 /////////////////// Create our Server  //////////////////////////////
 /////////////////////////////////////////////////////////////////////
 // create our server on port 8080
-http.createServer(app).listen(8080, function() {
-    console.log("Application started on port 8080!");
+app.set('port', process.env.PORT || 3000);
+http.createServer(app).listen(app.get('port'), function() {
+  console.log('Application started on port'  + app.get('port'));
 });
